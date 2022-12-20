@@ -8,8 +8,6 @@ flatpak install flathub org.gnome.World.Secrets com.discordapp.Discord net.david
 
 sudo pacman -Rns gnome-builder gnome-tetravex gnome-taquin gnome-sudoku gnome-robots gnome-recipes gnome-nibbles gnome-multi-writer gnome-mahjongg gnome-klotski gnome-games gnome-chess four-in-a-row evolution accerciser 
 
-flatpak uninstall --unused
-
 
 
 sudo systemctl enable jellyfin.service
