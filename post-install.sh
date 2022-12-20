@@ -1,6 +1,8 @@
 #! /bin/sh
 #
 
+# Adding a comment through my pc as opposed to from github.com
+
 yay -Syyu
 yay -S --needed base base-devel gnome flatpak papirus-icon-theme ttf-overpass ttf-cascadia-code ttf-fantasque-sans-mono ttf-fira-code ttf-lato ttf-iosevka-nerd ttf-jetbrains-mono ttf-ibm-plex ttf-ubuntu-font-family ttf-roboto ttf-roboto-mono ttf-font-awesome steam syncthing gnome-software gnome-software-packagekit-plugin jellyfin-bin piper adw-gtk3  
 
