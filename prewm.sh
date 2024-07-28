@@ -1,40 +1,20 @@
-#!/bin/sh
+#! /bin/sh
 
-DWM_VERSION=$(dwm -v)
+pkill lxpolkit emacs dunst unclutter picom numlockx nm-applet polybar
 
-# Set the screen resolution
-xrandr --output eDP-1 --mode 1920x1080 &
-
-# Set mouse pointer
+lxpolkit &
+emacs --daemon &
+systemctl --user import-environment DISPLAY
+xrandr --output eDP-1 --mode 1920x1080
 xsetroot -cursor_name left_ptr
-
-# Notifications
-pkill dunst
 dunst &
-
-# Restart unclutter for hiding the mouse pointer when idle
-pkill unclutter
 unclutter &
-
-# Restart the compositor
-pkill picom
-picom -f &
-
-# Ensure Numlock is enabled
-pkill numlockx
+picom -b &
 numlockx &
-
-# Restore wallpaper using nitrogen
-pkill nitrogen
 nitrogen --restore &
-
-# Restart network manager applet
-pkill nm-applet
 nm-applet &
-
-pkill pasystray
-pasystray &
-
+clipmenud &
+polybar bspwm 2>&1 | tee -a /tmp/polybar.log & disown
 
 # End of script
 
